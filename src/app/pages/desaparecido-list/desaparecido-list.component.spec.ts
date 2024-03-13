@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesaparecidoComponent } from './desaparecido.component';
+import { DesaparecidoComponent } from './desaparecido-list.component';
 
 describe('DesaparecidoComponent', () => {
   let component: DesaparecidoComponent;
@@ -11,7 +11,7 @@ describe('DesaparecidoComponent', () => {
       imports: [DesaparecidoComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(DesaparecidoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

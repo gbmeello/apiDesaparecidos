@@ -6,7 +6,7 @@ import { AsyncPipe, DatePipe, NgIf, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-desaparecido-details',
+  selector: 'app-desaparecido-list-details',
   standalone: true,
   imports: [DatePipe, RouterModule, NgIf, AsyncPipe, NgOptimizedImage],
   templateUrl: './desaparecido-details.component.html',

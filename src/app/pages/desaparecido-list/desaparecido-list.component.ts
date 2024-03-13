@@ -6,11 +6,11 @@ import { InputComponent } from '../../components/input/input.component';
 import { DesaparecidoService } from '../../services/desaparecido.service';
 
 @Component({
-  selector: 'app-desaparecido',
+  selector: 'app-desaparecido-list',
   standalone: true,
   imports: [InputComponent, CardComponent, NgFor, NgIf, NgStyle],
-  templateUrl: './desaparecido.component.html',
-  styleUrl: './desaparecido.component.scss',
+  templateUrl: './desaparecido-list.component.html',
+  styleUrl: './desaparecido-list.component.scss',
 })
 export class DesaparecidoComponent {
   nome = '';
