@@ -34,6 +34,11 @@
 
     .containerInputs {
       width: 500px;
+      display: inline-grid;
+
+      & app-input {
+        margin-bottom: 5px;
+      }
 
       .containerAge {
         margin-top: 15px;

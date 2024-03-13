@@ -1,41 +1,83 @@
 <section class="detailPerson" *ngIf="desaparecidoDetails">
   <a routerLink="/">
-    <img src="../../../assets/backIcon.jpg" alt="Ícone de voltar" class="backIcon">
+    <img
+      ngSrc="../../../assets/backIcon.jpg"
+      alt="Ícone de voltar"
+      class="backIcon"
+      height="128"
+      width="128"
+    />
   </a>
 
   <div class="cardPerson">
-    <img [src]="desaparecidoDetails.urlFoto" alt="Imagem de uma pessoa desaparecida" class="personImg"
-         *ngIf="desaparecidoDetails.urlFoto !== null; else nophoto">
+    <img
+      [src]="desaparecidoDetails.urlFoto"
+      alt="Imagem de uma pessoa desaparecida"
+      class="personImg"
+      *ngIf="desaparecidoDetails.urlFoto !== null; else nophoto"
+    />
     <ng-template #nophoto>
-      <img src="../../../assets/nophoto.jpeg" alt="Imagem mostrando que não tem foto" class="personImg"
-           style="object-fit: cover;">
+      <img
+        ngSrc="../../../assets/nophoto.jpg"
+        alt="Imagem não encontrada"
+        class="personImg"
+        style="object-fit: cover"
+        height="490"
+        width="490"
+      />
     </ng-template>
 
     <div class="containerInfo">
-      <p><span class="bold">Nome:</span> {{ desaparecidoDetails['nome'] }}</p>
-      <p><span class="bold">Idade:</span> {{ desaparecidoDetails['idade'] }}</p>
-      <p><span class="bold">Sexo:</span> {{ desaparecidoDetails['sexo'] }}</p>
-      <p><span class="bold">Data do desaparecimento:</span>
-        {{ desaparecidoDetails['ultimaOcorrencia']['dtDesaparecimento'] | date: 'dd/MM/yy' }}</p>
-      <p><span class="bold">Local do desaparecimento:</span>
-        {{ desaparecidoDetails['ultimaOcorrencia']['localDesaparecimentoConcat'] }}</p>
-      <div *ngIf="desaparecidoDetails.ultimaOcorrencia?.ocorrenciaEntrevDesapDTO">
-        <p><span class="bold">Informação:</span>
-          {{ desaparecidoDetails.ultimaOcorrencia?.ocorrenciaEntrevDesapDTO?.informacao?.['ultimaOcorrencia']['ocorrenciaEntrevDesapDTO']['informacao'] }}
+      <p><span class="bold">Nome:</span> {{ desaparecidoDetails.nome }}</p>
+      <p><span class="bold">Idade:</span> {{ desaparecidoDetails.idade }}</p>
+      <p><span class="bold">Sexo:</span> {{ desaparecidoDetails.sexo }}</p>
+      <p>
+        <span class="bold">Data do desaparecimento:</span>
+        {{
+          desaparecidoDetails.ultimaOcorrencia.dtDesaparecimento
+            | date: "dd/MM/yy"
+        }}
+      </p>
+      <p>
+        <span class="bold">Local do desaparecimento:</span>
+        {{ desaparecidoDetails.ultimaOcorrencia.localDesaparecimentoConcat }}
+      </p>
+      <div
+        *ngIf="desaparecidoDetails.ultimaOcorrencia.ocorrenciaEntrevDesapDTO"
+      >
+        <p>
+          <span class="bold">Informação:</span>
+          {{
+            desaparecidoDetails.ultimaOcorrencia.ocorrenciaEntrevDesapDTO
+              .informacao
+          }}
         </p>
-        <p><span class="bold">Vestimentas:</span>
-          {{ desaparecidoDetails.ultimaOcorrencia?.ocorrenciaEntrevDesapDTO.vestimentasDesaparecido?.['ultimaOcorrencia']['ocorrenciaEntrevDesapDTO']['vestimentasDesaparecido'] }}
+        <p>
+          <span class="bold">Vestimentas:</span>
+          {{
+            desaparecidoDetails.ultimaOcorrencia.ocorrenciaEntrevDesapDTO
+              .vestimentasDesaparecido
+          }}
         </p>
       </div>
     </div>
-
-
-      <a [href]="'https://api.whatsapp.com/send?text='+message" target="_blank">
-        <img src="../../../assets/whatsapp.png" alt="Whatsapp Ícone" class="wpp">
-      </a>
-      <a (click)="share()" target="_blank">
-        <img ngSrc="../../../assets/facebook.png" alt="Whatsapp Ícone" class="facebook" height="128" width="128">
-      </a>
-    </div>
+    <a [href]="'https://api.whatsapp.com/send?text=' + message" target="_blank">
+      <img
+        ngSrc="../../../assets/whatsapp.png"
+        alt="Whatsapp Ícone"
+        class="wpp"
+        height="128"
+        width="128"
+      />
+    </a>
+    <a (click)="share()" target="_blank">
+      <img
+        ngSrc="../../../assets/facebook.png"
+        alt="Whatsapp Ícone"
+        class="facebook"
+        height="128"
+        width="128"
+      />
+    </a>
+  </div>
 </section>
-

@@ -1,49 +1,94 @@
 <main class="home">
   <header class="header">
     <div class="containerLogo">
-      <img src="../../../assets/logo.png" alt="Logo da Policia" class="logo">
+      <img src="../../../assets/logo.png" alt="Logo da Policia" class="logo" />
       <h3 class="report">Denuncie: 197/181 | 3613-6981</h3>
     </div>
     <div>
       <h1 class="title">Lista de Pessoas Desaparecidas</h1>
       <div class="containerInputs">
         <app-input
-          [inputProps]="{ 'inputvalue': nome, 'stylesProps': {'margin-right': '10px'}, 'placeholder': 'Digite o nome da pessoa', 'type': 'text' }"
-          (eventEmitter)="onChangeNome($event)"></app-input>
+          [inputProps]="{
+            inputvalue: nome,
+            stylesProps: { 'margin-right': '10px' },
+            placeholder: 'Digite o nome da pessoa',
+            type: 'text'
+          }"
+          (eventEmitter)="onChangeNome($event)"
+        ></app-input>
 
-        <div class="containerIdade">
+        <div class="containerAge">
           <app-input
-            [inputProps]="{ 'inputvalue': idadeIni, 'stylesProps': {'margin-right': '10px'}, 'placeholder': 'Faixa Idade Inicial', 'type': 'number' }"
-            (eventEmitter)="onChangeIdadeInicial($event)"></app-input>
+            [inputProps]="{
+              inputvalue: idadeIni,
+              stylesProps: { 'margin-right': '10px' },
+              placeholder: 'Faixa Idade Inicial',
+              type: 'number'
+            }"
+            (eventEmitter)="onChangeIdadeInicial($event)"
+          ></app-input>
           <app-input
-            [inputProps]="{ 'inputvalue': idadeFin, 'stylesProps': {'margin-right': '10px'}, 'placeholder': 'Faixa Idade Final', 'type': 'number' }"
-            (eventEmitter)="onChangeIdadeFinal($event)"></app-input>
+            [inputProps]="{
+              inputvalue: idadeFin,
+              stylesProps: { 'margin-right': '10px' },
+              placeholder: 'Faixa Idade Final',
+              type: 'number'
+            }"
+            (eventEmitter)="onChangeIdadeFinal($event)"
+          ></app-input>
         </div>
 
-        <div class="containerSexo">
+        <div class="containerGender">
           <div>
-            <input type="radio" id="man" name="fav_language" (change)="sexo = 'MASCULINO'">
-            <label for="man" class="label">Masculino</label><br>
-            <input style="margin-top: 10px;" type="radio" id="woman" name="fav_language"
-                   (change)="sexo = 'FEMININO'">
-            <label for="woman" class="label">Feminino</label><br>
+            <input
+              type="radio"
+              id="man"
+              name="fav_language"
+              (change)="sexo = 'MASCULINO'"
+            />
+            <label for="man" class="label">Masculino</label><br />
+            <input
+              style="margin-top: 10px"
+              type="radio"
+              id="woman"
+              name="fav_language"
+              (change)="sexo = 'FEMININO'"
+            />
+            <label for="woman" class="label">Feminino</label><br />
           </div>
 
-          <button class="btn" (click)="search">Pesquisar</button>
+          <button class="btn" (click)="(search)">Pesquisar</button>
         </div>
       </div>
     </div>
   </header>
 
   <section class="container" *ngIf="listaDeDesaparecidos.length > 0">
-    <app-card *ngFor="let item of listaDeDesaparecidos" [desaparecido]="item"></app-card>
+    <app-card
+      *ngFor="let item of listaDeDesaparecidos"
+      [desaparecido]="item"
+    ></app-card>
   </section>
 
   <section class="pagination" *ngIf="listaDeDesaparecidos.length > 0">
-    <a (click)="onClickPreviousPage()" class="paginationBtn"
-       [ngStyle]="page <= 0 ? {'pointer-events': 'none', 'background-color': ''} : null">&lt;</a>
+    <a
+      (click)="onClickPreviousPage()"
+      class="paginationBtn"
+      [ngStyle]="
+        page <= 0 ? { 'pointer-events': 'none', 'background-color': '' } : null
+      "
+      >&lt;</a
+    >
     <span>{{ page }} / {{ maxPage }}</span>
-    <a (click)="onClickNextPage()" class="paginationBtn"
-       [ngStyle]="page === maxPage ? {'pointer-events': 'none', 'background-color': ''} : null">&gt;</a>
+    <a
+      (click)="onClickNextPage()"
+      class="paginationBtn"
+      [ngStyle]="
+        page === maxPage
+          ? { 'pointer-events': 'none', 'background-color': '' }
+          : null
+      "
+      >&gt;</a
+    >
   </section>
 </main>
