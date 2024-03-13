@@ -2,11 +2,10 @@
   <header class="header">
     <div class="containerLogo">
       <img src="../../../assets/logo.png" alt="Logo da Policia" class="logo" />
-      <h3 class="report">Denuncie: 197/181 | 3613-6981</h3>
     </div>
     <div>
       <h1 class="title">Lista de Pessoas Desaparecidas</h1>
-      <div class="containerInputs">
+      <div class="containerDosInputs">
         <app-input
           [inputProps]="{
             inputvalue: nome,
@@ -17,12 +16,12 @@
           (eventEmitter)="onChangeNome($event)"
         ></app-input>
 
-        <div class="containerAge">
+        <div class="containerIdade">
           <app-input
             [inputProps]="{
               inputvalue: idadeIni,
               stylesProps: { 'margin-right': '10px' },
-              placeholder: 'Faixa Idade Inicial',
+              placeholder: 'Faixa de Idade Inicial',
               type: 'number'
             }"
             (eventEmitter)="onChangeIdadeInicial($event)"
@@ -31,14 +30,14 @@
             [inputProps]="{
               inputvalue: idadeFin,
               stylesProps: { 'margin-right': '10px' },
-              placeholder: 'Faixa Idade Final',
+              placeholder: 'Faixa de Idade Final',
               type: 'number'
             }"
             (eventEmitter)="onChangeIdadeFinal($event)"
           ></app-input>
         </div>
 
-        <div class="containerGender">
+        <div class="containerSexo">
           <div>
             <input
               type="radio"
@@ -57,7 +56,7 @@
             <label for="woman" class="label">Feminino</label><br />
           </div>
 
-          <button class="btn" (click)="(search)">Pesquisar</button>
+          <button class="btPesquisar" (click)="(search)">Pesquisar</button>
         </div>
       </div>
     </div>

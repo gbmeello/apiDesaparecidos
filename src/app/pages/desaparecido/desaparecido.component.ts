@@ -71,7 +71,7 @@ export class DesaparecidoComponent {
 
   onClickNextPage() {
     const filter = `&pagina=${this.page + 1}${this.getFilter()}`;
-    this.page += 1;
+    this.page = 1;
     this.getPegaLista(filter);
   }
 

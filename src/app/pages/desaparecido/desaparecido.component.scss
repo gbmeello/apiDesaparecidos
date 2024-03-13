@@ -32,7 +32,7 @@
       }
     }
 
-    .containerInputs {
+    .containerDosInputs {
       width: 500px;
       display: inline-grid;
 
@@ -40,7 +40,7 @@
         margin-bottom: 5px;
       }
 
-      .containerAge {
+      .containerIdade {
         margin-top: 15px;
         display: flex;
         justify-content: space-between;
@@ -51,13 +51,13 @@
         font-family: "Inter", sans-serif;
       }
 
-      .containerGender {
+      .containerSexo{
         margin-top: 15px;
         display: flex;
         justify-content: space-between;
 
-        .btn {
-          background-color: #04945f;
+        .btPesquisar {
+          background-color: rgba(112, 10, 10, 0.73);
           border: none;
           color: white;
           padding: 2px 32px;
