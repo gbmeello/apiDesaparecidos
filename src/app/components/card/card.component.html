@@ -1,0 +1,13 @@
+<div class="card">
+  <div>
+    <img [src]="desaparecido['urlFoto']" alt="Imagem de uma pessoa desaparecida" class="personImage"
+         *ngIf="desaparecido['urlFoto'] !== null; else nophoto">
+    <ng-template #nophoto>
+      <img src="../../../assets/nophoto.jpeg" alt="Imagem mostrando que não tem foto" class="personImage">
+    </ng-template>
+    <p class="text"><strong>Nome:</strong> {{desaparecido['nome']}}</p>
+    <p class="text"><strong>Idade:</strong> {{desaparecido['idade']}}</p>
+    <p class="text"><strong>Sexo:</strong> {{desaparecido['sexo']}}</p>
+  </div>
+  <a class="button" [routerLink]="['/details/', desaparecido['id']]">Detalhes</a>
+</div>
